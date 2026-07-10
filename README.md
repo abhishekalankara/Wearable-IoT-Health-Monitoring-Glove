@@ -360,12 +360,6 @@ LinkedIn: https://www.linkedin.com/in/abhishekalankara/
 
 ---
 
-#  License
-
-This project is licensed under the MIT License.
-
----
-
 #  Support
 
 If you found this project useful, please consider giving it a ⭐ on GitHub. It helps others discover the project and supports future development.
