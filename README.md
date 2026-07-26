@@ -1,10 +1,10 @@
 # Wearable IoT-Based Health Monitoring Glove for High-Altitude Safety
 
-A wearable IoT-based health monitoring system developed using the ESP32 microcontroller for monitoring vital health parameters in high-altitude environments. The system measures Heart Rate (HR), Oxygen Saturation (SpO₂), and Body Temperature, displays the data on an OLED screen, transmits it to a mobile device via Bluetooth, and generates real-time alerts during abnormal health conditions.
+A wearable IoT-based health monitoring system built using the **ESP32 microcontroller** to monitor vital health parameters in high-altitude environments. The system continuously measures **Heart Rate (HR), Blood Oxygen Saturation (SpO₂), and Body Temperature**, displays the readings on an **OLED display**, transmits data to a mobile device via **Bluetooth**, and generates alerts during abnormal health conditions.
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - Overview
 - Project Highlights
@@ -19,91 +19,90 @@ A wearable IoT-based health monitoring system developed using the ESP32 microcon
 - Applications
 - Future Work
 - Author
+- Acknowledgements
 - License
 
 ---
 
-## Overview
+# Overview
 
-High-altitude environments pose significant health risks due to reduced oxygen availability, leading to conditions such as hypoxia and altitude sickness.
+High-altitude environments pose significant health risks due to reduced oxygen levels, which may lead to altitude sickness, hypoxia, and other health complications.
 
-This project presents a wearable IoT-based health monitoring glove that continuously monitors vital physiological parameters and provides real-time health updates. The system combines biomedical sensors, wireless communication, and embedded processing to improve user safety in challenging environments.
+This project introduces a wearable IoT-based health monitoring glove capable of continuously monitoring vital physiological parameters. Using biomedical sensors integrated with an ESP32 microcontroller, the system processes health data in real time and wirelessly transmits it to a mobile device for remote monitoring.
 
-The measured parameters include:
+The system monitors:
 
 - Heart Rate (HR)
 - Blood Oxygen Saturation (SpO₂)
 - Body Temperature
 
-The collected data is displayed locally on an OLED display and transmitted wirelessly to a mobile application through Bluetooth. If abnormal readings are detected, the system immediately alerts the user using a buzzer.
+The measured values are displayed on an OLED display and sent to a mobile device through Bluetooth. Whenever abnormal health conditions are detected, the system immediately alerts the user using a buzzer.
 
 ---
 
-## Project Highlights
+# Project Highlights
 
-- ESP32-based wearable health monitoring system
+- ESP32-based wearable IoT system
 - Real-time Heart Rate monitoring
-- Blood Oxygen (SpO₂) measurement
+- Blood Oxygen Saturation (SpO₂) measurement
 - Body Temperature monitoring
-- OLED display for live data visualization
-- Bluetooth-based wireless communication
-- Mobile health monitoring
-- Automatic abnormal health detection
-- Buzzer alert system
-- Portable and low-cost wearable solution
+- OLED display for live health data
+- Bluetooth communication with mobile devices
+- Emergency alert using buzzer
+- Portable and lightweight wearable design
+- Low-cost implementation
+- Real-time health monitoring
 
 ---
 
-## Objectives
+# Objectives
 
-- Design a wearable health monitoring system for high-altitude safety.
-- Measure Heart Rate and SpO₂.
-- Monitor body temperature.
+- Design a wearable health monitoring glove for high-altitude safety.
+- Measure Heart Rate and Blood Oxygen Saturation.
+- Monitor body temperature continuously.
 - Detect abnormal health conditions.
 - Transmit health data to a mobile device via Bluetooth.
 - Provide real-time alerts for emergency situations.
 
 ---
 
-## System Architecture
+# System Architecture
 
-The system consists of:
-
-### Input Sensors
+## Input Sensors
 
 - MAX30102 Pulse Oximeter Sensor
 - LM35 Temperature Sensor
 
-### Processing Unit
+## Processing Unit
 
 - ESP32 Microcontroller
 
-### Output Devices
+## Output Devices
 
-- OLED Display (SSD1306)
-- Bluetooth Module (ESP32 Built-in)
+- SSD1306 OLED Display
+- Bluetooth Communication
 - Mobile Phone
-- Buzzer
+- Buzzer Alert
 
-The ESP32 collects sensor readings, processes the data, displays the measurements on the OLED display, transmits them to a mobile phone through Bluetooth, and activates the buzzer whenever abnormal readings are detected.
+The ESP32 receives data from the biomedical sensors, processes the information, displays it on the OLED screen, transmits it to a mobile device using Bluetooth, and activates a buzzer whenever abnormal health conditions are detected.
 
 ---
 
-## Hardware Components
+# Hardware Components
 
 | Component | Purpose |
 |-----------|----------|
-| ESP32 | Main processing unit |
+| ESP32 | Main Controller |
 | MAX30102 | Heart Rate & SpO₂ Sensor |
 | LM35 | Temperature Sensor |
-| OLED Display | Display health parameters |
-| Buzzer | Alert system |
-| Bluetooth | Wireless communication |
-| Li-Po Battery | Power supply |
+| SSD1306 OLED Display | Display Health Parameters |
+| Buzzer | Emergency Alert |
+| Bluetooth | Wireless Communication |
+| Li-Po Battery | Power Supply |
 
 ---
 
-## Project Workflow
+# Project Workflow
 
 ```text
 START
@@ -120,138 +119,186 @@ Process Sensor Data
    │
 Display Data on OLED
    │
-Send Data via Bluetooth
+Transmit Data via Bluetooth
    │
-Check Health Conditions
+Check Threshold Values
    │
- ┌───────────────┐
- │Normal Values? │
- └──────┬────────┘
+ ┌──────────────┐
+ │Normal Values?│
+ └──────┬───────┘
         │
    Yes  │  No
         │
-Healthy Status
+Display Normal
         │
 Activate Buzzer
-Display Warning
+Send Alert
         │
 Repeat Monitoring
 ```
 
 ---
 
-## Features
+# Features
 
 - Continuous Heart Rate Monitoring
 - Continuous SpO₂ Monitoring
-- Body Temperature Measurement
+- Continuous Temperature Monitoring
 - OLED Display Interface
 - Bluetooth Communication
 - Mobile Health Monitoring
 - Emergency Alert System
-- Portable Wearable Design
+- Portable Wearable Device
 - Low Power Consumption
-- Cost-effective Implementation
+- Cost-effective Design
 
 ---
 
 # Results
 
-The developed prototype successfully monitored vital health parameters and transmitted the readings wirelessly to a mobile device.
+The developed prototype successfully monitored:
+
+- Heart Rate
+- Blood Oxygen Saturation (SpO₂)
+- Body Temperature
 
 The system successfully:
 
-- Measured Heart Rate
-- Measured Blood Oxygen Saturation (SpO₂)
-- Measured Body Temperature
-- Displayed data on OLED Display
-- Sent data to a mobile phone through Bluetooth
-- Generated buzzer alerts for abnormal conditions
-
-The prototype demonstrated reliable operation as a portable and low-cost health monitoring solution for high-altitude safety.
+- Displayed live sensor data on the OLED display.
+- Transmitted health data wirelessly via Bluetooth.
+- Displayed health information on a mobile device.
+- Generated buzzer alerts during abnormal health conditions.
+- Operated as a portable and low-cost wearable health monitoring system.
 
 ---
 
-## Technologies Used
+# Project Demonstration
 
-### Programming Language
+## Block Diagram
 
-- Embedded C / Arduino
+![Block Diagram](results/block_diagram.png)
 
-### Development Environment
+---
+
+## Flow Chart
+
+![Flow Chart](results/flow_chart.png)
+
+---
+
+## Hardware Setup
+
+![Hardware Setup](results/hardware_setup.png)
+
+---
+
+## Live Health Monitoring
+
+![Live Health Monitoring](results/Live_Health_Monitoring.png)
+
+---
+
+## Bluetooth Monitoring
+
+![Bluetooth Monitoring](results/Bluetooth_Monitoring.png)
+
+---
+
+## Serial Monitor Output
+
+![Serial Monitor](results/Serial_Monitor.png)
+
+---
+
+## User Interaction Interface
+
+![User Interface](results/User_Interaction_Interface.png)
+
+---
+
+# Technologies Used
+
+## Programming Language
+
+- Embedded C
+- Arduino
+
+## Development Environment
 
 - Arduino IDE
 
-### Microcontroller
+## Hardware Platform
 
 - ESP32
 
-### Sensors
+## Sensors
 
 - MAX30102
 - LM35
 
-### Communication
+## Communication
 
 - Bluetooth
 
-### Display
+## Display
 
 - SSD1306 OLED Display
 
 ---
 
-## Repository Structure
+# Repository Structure
 
 ```text
 Wearable-IoT-Health-Monitoring-Glove/
 
 │
-├── images/
+├── results/
+│   ├── Bluetooth_Monitoring.png
+│   ├── Live_Health_Monitoring.png
+│   ├── Serial_Monitor.png
+│   ├── User_Interaction_Interface.png
 │   ├── block_diagram.png
-│   ├── flowchart.png
-│   ├── hardware_setup.jpg
-│   ├── prototype.jpg
-│   └── results.jpg
+│   ├── flow_chart.png
+│   └── hardware_setup.png
 │
 ├── src/
 │   └── health_monitoring_glove.ino
 │
-├── README.md
+├── .gitignore
 ├── LICENSE
-├── requirements.txt
-└── .gitignore
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## Applications
+# Applications
 
-- High-altitude Safety
+- High-Altitude Safety
 - Trekking
 - Mountaineering
 - Military Personnel
-- Healthcare Monitoring
 - Remote Patient Monitoring
+- Healthcare Monitoring
 - Emergency Medical Assistance
-- Wearable IoT Systems
+- Wearable IoT Devices
 
 ---
 
-## Future Work
+# Future Work
 
-- Compact glove-based wearable design
-- Integration with IoT cloud platforms
-- Wi-Fi based remote monitoring
-- GPS-based emergency tracking
-- Mobile application development
-- AI-based health prediction
+- Cloud-based IoT monitoring
+- Wi-Fi connectivity
+- GPS-based emergency location tracking
+- AI-powered health prediction
+- Mobile application integration
 - Battery optimization
 - Additional biomedical sensors
+- Compact wearable design
 
 ---
 
-## Author
+# Author
 
 **Abhishek Alankara**
 
@@ -265,16 +312,16 @@ SRM University-AP
 
 ---
 
-## Acknowledgements
+# Acknowledgements
 
-I would like to express my sincere gratitude to the faculty members and mentors of the Department of Electronics and Communication Engineering, SRM University-AP, for their continuous guidance and support throughout this project. I also acknowledge the open-source community for providing the software tools, development platforms, and hardware libraries that contributed to the successful implementation of this project.
+I would like to express my sincere gratitude to the faculty members and mentors of the Department of Electronics and Communication Engineering, SRM University-AP, for their valuable guidance and support throughout this project. I also acknowledge the open-source community for providing the software libraries and development tools that contributed to the successful implementation of this project.
 
 ---
 
-## License
+# License
 
 This project is licensed under the **MIT License**.
 
 ---
 
-If you found this project useful, consider giving this repository a **Star**.
+If you found this project helpful, consider giving this repository a **Star**.
