@@ -1,94 +1,280 @@
-# Wearable-Health-Monitoring-Glove-for-High-Altitude-Safety
+# Wearable IoT-Based Health Monitoring Glove for High-Altitude Safety
 
-Developed a wearable IoT-based health monitoring glove using ESP32, MAX30102, and LM35 to monitor heart rate, SpO₂, and body temperature in real time. The system transmits data via Bluetooth and provides alerts for abnormal conditions, improving safety in high-altitude environments.
+A wearable IoT-based health monitoring system developed using the ESP32 microcontroller for monitoring vital health parameters in high-altitude environments. The system measures Heart Rate (HR), Oxygen Saturation (SpO₂), and Body Temperature, displays the data on an OLED screen, transmits it to a mobile device via Bluetooth, and generates real-time alerts during abnormal health conditions.
+
+---
+
+## Table of Contents
+
+- Overview
+- Project Highlights
+- Objectives
+- System Architecture
+- Hardware Components
+- Project Workflow
+- Features
+- Results
+- Technologies Used
+- Repository Structure
+- Applications
+- Future Work
+- Author
+- License
 
 ---
 
 ## Overview
 
-The Wearable IoT-Based Health Monitoring Glove is an embedded healthcare solution developed to improve safety in high-altitude environments. The system continuously monitors vital physiological parameters, including heart rate, oxygen saturation (SpO₂), and body temperature, using integrated biomedical sensors. The collected data is processed by an ESP32 microcontroller, displayed on an OLED screen, and wirelessly transmitted to a smartphone through Bluetooth. By providing instant health status updates and alerts, the device enables early detection of altitude-related health issues while remaining portable, lightweight, and cost-effective. 
+High-altitude environments pose significant health risks due to reduced oxygen availability, leading to conditions such as hypoxia and altitude sickness.
+
+This project presents a wearable IoT-based health monitoring glove that continuously monitors vital physiological parameters and provides real-time health updates. The system combines biomedical sensors, wireless communication, and embedded processing to improve user safety in challenging environments.
+
+The measured parameters include:
+
+- Heart Rate (HR)
+- Blood Oxygen Saturation (SpO₂)
+- Body Temperature
+
+The collected data is displayed locally on an OLED display and transmitted wirelessly to a mobile application through Bluetooth. If abnormal readings are detected, the system immediately alerts the user using a buzzer.
 
 ---
 
-## Project Objective
+## Project Highlights
 
-The primary objective of this project is to design and develop a wearable health monitoring device capable of continuously tracking essential body parameters in real time. The system aims to enhance safety for trekkers, mountaineers, rescue personnel, and high-altitude workers by detecting abnormal health conditions and immediately notifying users through visual and audio alerts. Its compact design and wireless connectivity make it suitable for both outdoor and healthcare applications. 
-
----
-
-## How It Works
-
-The wearable glove continuously acquires physiological data through the MAX30102 pulse oximeter sensor and the LM35 temperature sensor. The ESP32 processes the incoming sensor data to calculate heart rate, blood oxygen saturation, and body temperature. These measurements are displayed on the OLED display for immediate user reference while simultaneously being transmitted to a mobile device via Bluetooth. Whenever any measured parameter exceeds the predefined safe range, the ESP32 activates a buzzer and updates the health status, allowing users to respond quickly to potential medical emergencies. 
-
----
-
-## Key Features
-
-The Health Monitoring Glove provides continuous monitoring of heart rate, blood oxygen saturation, and body temperature in a compact wearable device. It offers real-time OLED visualization, Bluetooth-based wireless communication with smartphones, automatic abnormal health detection, and instant buzzer alerts for emergency situations. Designed with portability and low power consumption in mind, the system provides a practical and affordable solution for monitoring health in challenging environments. 
+- ESP32-based wearable health monitoring system
+- Real-time Heart Rate monitoring
+- Blood Oxygen (SpO₂) measurement
+- Body Temperature monitoring
+- OLED display for live data visualization
+- Bluetooth-based wireless communication
+- Mobile health monitoring
+- Automatic abnormal health detection
+- Buzzer alert system
+- Portable and low-cost wearable solution
 
 ---
 
-## Technologies Used
+## Objectives
 
-This project combines embedded systems, biomedical sensors, and wireless communication technologies to build a real-time health monitoring platform.
-
-**Hardware**
-- ESP32 Development Board
-- MAX30102 Pulse Oximeter Sensor
-- LM35 Temperature Sensor
-- OLED Display (SSD1306)
-- Buzzer
-- Li-Po Battery
-- Wearable Glove
-
-**Software**
-- Arduino IDE
-- Embedded C/C++
-- ESP32 Bluetooth Library
-- Adafruit SSD1306 Library
-- Wire Library
+- Design a wearable health monitoring system for high-altitude safety.
+- Measure Heart Rate and SpO₂.
+- Monitor body temperature.
+- Detect abnormal health conditions.
+- Transmit health data to a mobile device via Bluetooth.
+- Provide real-time alerts for emergency situations.
 
 ---
 
 ## System Architecture
 
-The system architecture consists of three major layers. The sensing layer includes the MAX30102 sensor for measuring heart rate and blood oxygen levels, along with the LM35 temperature sensor for monitoring body temperature. The processing layer uses an ESP32 microcontroller to collect sensor data, analyze health parameters, and determine whether the readings fall within safe operating limits. The output layer consists of an OLED display for real-time visualization, a buzzer for emergency alerts, and Bluetooth communication that sends health information directly to a mobile application for remote monitoring.
+The system consists of:
+
+### Input Sensors
+
+- MAX30102 Pulse Oximeter Sensor
+- LM35 Temperature Sensor
+
+### Processing Unit
+
+- ESP32 Microcontroller
+
+### Output Devices
+
+- OLED Display (SSD1306)
+- Bluetooth Module (ESP32 Built-in)
+- Mobile Phone
+- Buzzer
+
+The ESP32 collects sensor readings, processes the data, displays the measurements on the OLED display, transmits them to a mobile phone through Bluetooth, and activates the buzzer whenever abnormal readings are detected.
+
+---
+
+## Hardware Components
+
+| Component | Purpose |
+|-----------|----------|
+| ESP32 | Main processing unit |
+| MAX30102 | Heart Rate & SpO₂ Sensor |
+| LM35 | Temperature Sensor |
+| OLED Display | Display health parameters |
+| Buzzer | Alert system |
+| Bluetooth | Wireless communication |
+| Li-Po Battery | Power supply |
+
+---
+
+## Project Workflow
+
+```text
+START
+   │
+Initialize ESP32
+   │
+Initialize Sensors
+   │
+Read Heart Rate
+Read SpO₂
+Read Temperature
+   │
+Process Sensor Data
+   │
+Display Data on OLED
+   │
+Send Data via Bluetooth
+   │
+Check Health Conditions
+   │
+ ┌───────────────┐
+ │Normal Values? │
+ └──────┬────────┘
+        │
+   Yes  │  No
+        │
+Healthy Status
+        │
+Activate Buzzer
+Display Warning
+        │
+Repeat Monitoring
+```
+
+---
+
+## Features
+
+- Continuous Heart Rate Monitoring
+- Continuous SpO₂ Monitoring
+- Body Temperature Measurement
+- OLED Display Interface
+- Bluetooth Communication
+- Mobile Health Monitoring
+- Emergency Alert System
+- Portable Wearable Design
+- Low Power Consumption
+- Cost-effective Implementation
+
+---
+
+# Results
+
+The developed prototype successfully monitored vital health parameters and transmitted the readings wirelessly to a mobile device.
+
+The system successfully:
+
+- Measured Heart Rate
+- Measured Blood Oxygen Saturation (SpO₂)
+- Measured Body Temperature
+- Displayed data on OLED Display
+- Sent data to a mobile phone through Bluetooth
+- Generated buzzer alerts for abnormal conditions
+
+The prototype demonstrated reliable operation as a portable and low-cost health monitoring solution for high-altitude safety.
+
+---
+
+## Technologies Used
+
+### Programming Language
+
+- Embedded C / Arduino
+
+### Development Environment
+
+- Arduino IDE
+
+### Microcontroller
+
+- ESP32
+
+### Sensors
+
+- MAX30102
+- LM35
+
+### Communication
+
+- Bluetooth
+
+### Display
+
+- SSD1306 OLED Display
+
+---
+
+## Repository Structure
+
+```text
+Wearable-IoT-Health-Monitoring-Glove/
+
+│
+├── images/
+│   ├── block_diagram.png
+│   ├── flowchart.png
+│   ├── hardware_setup.jpg
+│   ├── prototype.jpg
+│   └── results.jpg
+│
+├── src/
+│   └── health_monitoring_glove.ino
+│
+├── README.md
+├── LICENSE
+├── requirements.txt
+└── .gitignore
+```
 
 ---
 
 ## Applications
 
-The wearable health monitoring glove is suitable for high-altitude trekking, mountain expeditions, rescue operations, military personnel, healthcare monitoring, elderly patient care, sports and fitness tracking, and industrial workers operating in extreme environmental conditions. Its portable design allows continuous health monitoring wherever immediate medical assistance may not be readily available. 
+- High-altitude Safety
+- Trekking
+- Mountaineering
+- Military Personnel
+- Healthcare Monitoring
+- Remote Patient Monitoring
+- Emergency Medical Assistance
+- Wearable IoT Systems
 
 ---
 
-## Future Scope
+## Future Work
 
-The project can be further enhanced by integrating GPS-based location tracking, cloud-based IoT monitoring, GSM or Wi-Fi communication for remote healthcare services, AI-based health prediction, rechargeable wearable modules, mobile application dashboards, cloud data logging, and emergency SOS notifications to caregivers or medical professionals. These improvements would make the device more suitable for commercial healthcare and remote patient monitoring applications. 
+- Compact glove-based wearable design
+- Integration with IoT cloud platforms
+- Wi-Fi based remote monitoring
+- GPS-based emergency tracking
+- Mobile application development
+- AI-based health prediction
+- Battery optimization
+- Additional biomedical sensors
 
 ---
 
-## Conclusion
+## Author
 
-The Wearable IoT-Based Health Monitoring Glove demonstrates the effective integration of biomedical sensors, embedded systems, and wireless communication into a compact wearable healthcare device. By continuously monitoring heart rate, blood oxygen saturation, and body temperature while providing instant alerts during abnormal conditions, the system improves user safety in high-altitude and remote environments. Its portability, affordability, and real-time monitoring capabilities make it a promising solution for future wearable healthcare technologies. 
+**Abhishek Alankara**
+
+B.Tech – Electronics and Communication Engineering
+
+SRM University-AP
+
+**LinkedIn:** https://www.linkedin.com/in/abhishekalankara/
+
+**GitHub:** https://github.com/abhishekalankara
 
 ---
 
-## Contributors
+## Acknowledgements
 
-- Alankara Abhishek
-- Rayapati Siva Charan Chowdary
-- Darapu Mohanth Sai Dinesh Reddy
-- Tippireddy Manoj Reddy 
-
-
-Department of Electronics and Communication Engineering
-
-SRM University AP
-
+I would like to express my sincere gratitude to the faculty members and mentors of the Department of Electronics and Communication Engineering, SRM University-AP, for their continuous guidance and support throughout this project. I also acknowledge the open-source community for providing the software tools, development platforms, and hardware libraries that contributed to the successful implementation of this project.
 
 ---
 
 ## License
 
-This project is developed for educational and academic purposes.
+This project is licensed under the **MIT License**.
+
+---
+
+If you found this project useful, consider giving this repository a **Star**.
