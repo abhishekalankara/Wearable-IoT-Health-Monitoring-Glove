@@ -1,0 +1,7 @@
+Arduino IDE
+ESP32 Board Package
+Adafruit GFX Library
+Adafruit SSD1306 Library
+MAX30105 Library
+BluetoothSerial Library
+Wire Library
